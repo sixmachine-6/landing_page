@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Lets React Router handle every route (/about, /contact...),
+# so refreshing or opening a direct link doesn't give a 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@keyframes navbarDrop {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-navbar-drop {
+  animation: navbarDrop 0.45s ease-out both;
+}
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: dark;
+  --page: 0 0 0;
+  --alt: 10 10 10;
+  --card: 20 20 20;
+  --ink: 245 245 245;
+  --muted: 160 166 162;
+  --accent: 52 209 122;
+  --brand: 21 128 61;
+  --brand-hover: 22 163 74;
+  --down: 239 68 68;
+  --footer: 8 8 8;
+  --hero-gradient: linear-gradient(
+    125deg,
+    #000000 30%,
+    #050a07 65%,
+    #0b2a16 100%
+  );
+  --glow: rgb(34 197 94 / 0.2);
+  --glow-down: rgb(239 68 68 / 0.12);
+}
+
+:root.light {
+  color-scheme: light;
+  --page: 244 245 244;
+  --alt: 234 236 234;
+  --card: 255 255 255;
+  --ink: 17 24 20;
+  --muted: 94 104 98;
+  --accent: 21 128 61;
+  --brand: 21 128 61;
+  --brand-hover: 22 101 52;
+  --down: 220 38 38;
+  --footer: 8 8 8;
+  --hero-gradient: linear-gradient(125deg, #f4f5f4 30%, #e6e9e6 100%);
+  --glow: rgb(34 197 94 / 0.16);
+  --glow-down: rgb(220 38 38 / 0.09);
+}
+
+body {
+  background-color: rgb(var(--page));
+  color: rgb(var(--ink));
+}
+
+@theme inline {
+  --color-page: rgb(var(--page));
+  --color-alt: rgb(var(--alt));
+  --color-card: rgb(var(--card));
+  --color-ink: rgb(var(--ink));
+  --color-muted: rgb(var(--muted));
+  --color-accent: rgb(var(--accent));
+  --color-brand: rgb(var(--brand));
+  --color-brand-hover: rgb(var(--brand-hover));
+  --color-down: rgb(var(--down));
+  --color-footer: rgb(var(--footer));
+}
